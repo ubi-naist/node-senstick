@@ -6,4 +6,7 @@ A Node.js lib for SenStick
 2. npm install *path/to/node-senstick*
 
 # Examples
-See [examples/test.js](https://github.com/examples/test.js)
+- [examples/test.js](https://github.com/ubi-naist/node-senstick/blob/master/examples/test.js)
+- [examples/test_device_information.js](https://github.com/ubi-naist/node-senstick/blob/master/examples/test_device_information.js)
+- [examples/test_multidevices.js](https://github.com/ubi-naist/node-senstick/blob/master/examples/test_multidevices.js)
+- [test_rtsensors.js](https://github.com/ubi-naist/node-senstick/blob/master/examples/test_rtsensors.js)
