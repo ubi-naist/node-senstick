@@ -1,0 +1,22 @@
+{
+  "name": "node-senstick",
+  "version": "0.1.0",
+  "description": "Node.js lib for the SenStick",
+  "main": "index.js",
+  "keywords": [
+    "SenStick"
+  ],
+  "author": "fujiwara",
+  "dependencies": {
+    "async": "^2.0.1",
+    "noble-device": "^1.4.0"
+  },
+  "devDependencies": {
+    "docdash": "^0.4.0",
+    "eslint": "^3.4.0"
+  },
+  "scripts": {
+    "lint": "eslint lib",
+    "gdoc": "jsdoc -r lib"
+  }
+}
