@@ -2,7 +2,7 @@
 // using multi sensticks
 
 var async = require('async');
-var SenStick = require('./index.js');
+var SenStick = require('../index.js');
 
 // display log
 function log(message, ...optionalParams)
