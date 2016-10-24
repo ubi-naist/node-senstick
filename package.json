@@ -17,6 +17,6 @@
   },
   "scripts": {
     "lint": "eslint lib",
-    "gdoc": "jsdoc -r lib"
+    "gdoc": "jsdoc -c jsdoc.json"
   }
 }
