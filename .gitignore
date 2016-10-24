@@ -2,6 +2,7 @@
 node_modules/
 out/
 docs/
-._.DS_Store
 
+._.DS_Store
 .DS_Store
+npm-debug.log
