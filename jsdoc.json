@@ -3,7 +3,7 @@
         "allowUnknownTags": false
     },
     "source": {
-        "include": "../lib",
+        "include": "./lib",
         "includePattern": ".js$",
         "excludePattern": "(node_modules/|docs)"
     },
@@ -17,5 +17,6 @@
     "templates": {
         "cleverLinks": false,
         "monospaceLinks": false
-    }
+    },
+    "plugins": ["plugins/markdown"]
 }
