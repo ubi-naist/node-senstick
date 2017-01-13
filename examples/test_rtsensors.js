@@ -2,7 +2,7 @@
 // receive 7 sensors data
 
 var async = require('async');
-var SenStick = require('./index.js');
+var SenStick = require('../index.js');
 var readline = require('readline');
 
 SenStick.discover(
