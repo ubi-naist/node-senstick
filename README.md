@@ -2,8 +2,7 @@
 A Node.js lib for SenStick
 
 # Install
-1. git clone 
-2. npm install *path/to/node-senstick*
+npm install ubi-naist/node-senstick
 
 # Examples
 - [examples/test.js](https://github.com/ubi-naist/node-senstick/blob/master/examples/test.js)
