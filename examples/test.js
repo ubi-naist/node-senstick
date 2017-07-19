@@ -328,24 +328,9 @@ SenStick.discover(
             },
             function(callback)
             {
-                console.log('readIlluminanceLogData');
-                senstick.readIlluminanceLogData(
-                    14,
-                    0,
-                    function(error, log_metadata, log_data)
-                    {
-                        console.log('\tlog_metadata = ' + log_metadata);
-                        console.log('\tlog_data = ' + log_data);
-                        console.log('\terror = ' + error);
-                        callback();
-                    }
-                );
-            },
-            function(callback)
-            {
                 console.log('writeIlluminanceLogReadoutTargetID');
                 senstick.writeIlluminanceLogReadoutTargetID(
-                    15,
+                    0,
                     0,
                     function(error)
                     {
