@@ -253,18 +253,6 @@ SenStick.discover(
                     }
                 );
             },
-            /*function(callback)
-            {
-                console.log('writeIlluminanceSamplingPeriod');
-                senstick.writeIlluminanceSamplingPeriod(
-                    1000,
-                    function(error)
-                    {
-                        console.log('\terror = error');
-                        callback();
-                    }
-                );
-            },*/
             function(callback)
             {
                 console.log('enableIlluminanceSensor');
