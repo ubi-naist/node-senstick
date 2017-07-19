@@ -1,7 +1,7 @@
 // example program
 
 var async = require('async');
-var SenStick = require('./index.js');
+var SenStick = require('../index.js');
 
 SenStick.discover(
     function(senstick)
