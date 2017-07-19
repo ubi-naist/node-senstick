@@ -9,16 +9,19 @@ SenStick.discover(
         console.log('discovered : ' + senstick);
         var logdata_readout_finished = false;
 
+        // SenStickから切断された際に呼び出されるコールバック関数を登録する
         senstick.on(
             'disconnect',
             function()
             {
+                // SenStickから切断されたら，サンプルスクリプトを終了する
                 console.log('we got disconnected!');
                 console.log('bye bye');
                 process.exit();
             }
         );
 
+        // 照度センサのセンサ値を受信した際に呼び出されるコールバック関数を登録する
         senstick.on(
             'illuminanceChange',
             function(value)
@@ -27,6 +30,7 @@ SenStick.discover(
             }
         );
         
+        // 照度センサのログを受信した際に呼び出されるコールバック関数を登録する
         senstick.on(
             'illuminanceLogDataReceived',
             function(number_of_data, sensor_data)
@@ -40,12 +44,16 @@ SenStick.discover(
             }
         );
 
+        // 以下，各メソッドを呼び出して，SenStickの情報取得やセンサの設定，センシング，
+        // データやログの取得，切断，の一連の処理を実行する
         async.series([
+            // SenStickに接続する
             function(callback)
             {
                 console.log('connectAndSetUp');
                 senstick.connectAndSetUp(callback);
             },
+            // デバイス名を取得する
             function(callback)
             {
                 console.log('readDeviceName');
@@ -55,6 +63,7 @@ SenStick.discover(
                     callback();
                 });
             },
+            // System
             function(callback)
             {
                 console.log('readSystemId');
