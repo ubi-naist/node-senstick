@@ -53,26 +53,6 @@ SenStick.discover(
                 console.log('connectAndSetUp');
                 senstick.connectAndSetUp(callback);
             },
-            // デバイス名を取得する
-            function(callback)
-            {
-                console.log('readDeviceName');
-                senstick.readDeviceName(function(error, deviceName) {
-                    console.log('\tdevice name = ' + deviceName);
-                    console.log('\terror = ' + error);
-                    callback();
-                });
-            },
-            // System
-            function(callback)
-            {
-                console.log('readSystemId');
-                senstick.readSystemId(function(error, systemID) {
-                    console.log('\tsystem id = ' + systemID);
-                    console.log('\terror = ' + error);
-                    callback();
-                });
-            },
             function(callback)
             {
                 console.log('readSerialNumber');
