@@ -53,6 +53,7 @@ SenStick.discover(
                 console.log('connectAndSetUp');
                 senstick.connectAndSetUp(callback);
             },
+            // シリアルナンバーを取得する
             function(callback)
             {
                 console.log('readSerialNumber');
@@ -62,6 +63,7 @@ SenStick.discover(
                     callback();
                 });
             },
+            // ファームウェアのリビジョンを取得する
             function(callback)
             {
                 console.log('readFirmwareRevision');
@@ -71,6 +73,7 @@ SenStick.discover(
                     callback();
                 });
             },
+            // ハードウェアのリビジョンを取得する
             function(callback)
             {
                 console.log('readHardwareRevision');
@@ -80,6 +83,7 @@ SenStick.discover(
                     callback();
                 });
             },
+            // ソフトウェアのリビジョンを取得する
             function(callback)
             {
                 console.log('readSoftwareRevision');
@@ -89,6 +93,7 @@ SenStick.discover(
                     callback();
                 });
             },
+            // 製造社名を取得する
             function(callback)
             {
                 console.log('readManufacturerName');
@@ -98,8 +103,7 @@ SenStick.discover(
                     callback();
                 });
             },
-
-            // BatteryLevelチェック用
+            // バッテリー残量を取得する
             function(callback)
             {
                 console.log('readBatteryLevel');
@@ -109,7 +113,9 @@ SenStick.discover(
                     callback();
                 });
             },
-            // 以下Metadataチェック用
+
+            // 以下，ログのメタデータチェック用の処理を記述する
+            // 1. メタデータを読み出したいログのIDを書き込む
             function(callback)
             {
                 console.log('writeTargetLogId');
@@ -122,6 +128,7 @@ SenStick.discover(
                     }
                 );
             },
+            // 2. 現在設定されている読み出し対象のログIDを取得する
             function(callback)
             {
                 console.log('readTargetLogId');
@@ -134,6 +141,7 @@ SenStick.discover(
                     }
                 );
             },
+            // 3. 読み出し対象のログから，ログ記録開始時刻を取得する
             function(callback)
             {
                 console.log('readLogLoggingStartedTimeFromTargetLog');
@@ -146,6 +154,7 @@ SenStick.discover(
                     }
                 );
             },
+            // 4. 読み出し対象のログから，概要テキストを取得する
             function(callback)
             {
                 console.log('readLogAbstractTextFromTargetLog');
@@ -158,8 +167,9 @@ SenStick.discover(
                     }
                 );
             },
+            // 以上がログのメタデータチェック用の処理
 
-            // SenStickControl
+            // SenStickの動作状態を取得する
             function(callback)
             {
                 console.log('readControlStatus');
@@ -172,6 +182,7 @@ SenStick.discover(
                     }
                 );
             },
+            // 有効ログ数を取得する
             function(callback)
             {
                 console.log('readActiveLogNum');
@@ -184,6 +195,7 @@ SenStick.discover(
                     }
                 );
             },
+            // 内部ストレージの状態を取得する
             function(callback)
             {
                 console.log('readInternalStorageState');
@@ -196,6 +208,8 @@ SenStick.discover(
                     }
                 );
             },
+            // 内蔵カレンダーの日付時刻情報を設定する
+            // このサンプルでは，PCの時刻をSenStickに設定する
             function(callback)
             {
                 console.log('writeInternalDatetime');
@@ -213,7 +227,8 @@ SenStick.discover(
                         callback();
                     }
                 );
-            },     
+            },
+            // 内蔵カレンダーの日付時刻情報を取得する
             function(callback)
             {
                 console.log('readInternalDatetime');
@@ -228,6 +243,7 @@ SenStick.discover(
             },
 
             // 照度センサ
+            // 照度センサの計測動作を取得する
             function(callback)
             {
                 console.log('readIlluminanceMeasurementConfig');
@@ -242,6 +258,7 @@ SenStick.discover(
                     }
                 );
             },
+            // 照度センサを有効にする
             function(callback)
             {
                 console.log('enableIlluminanceSensor');
@@ -254,6 +271,7 @@ SenStick.discover(
                     }
                 );
             },
+            // 照度センサのnotificationの受信要求を設定する
             function(callback)
             {
                 console.log('notifyIlluminance');
@@ -265,6 +283,7 @@ SenStick.discover(
                     }
                 );
             },
+            // 測定を開始する
             function(callback)
             {
                 console.log('start logging');
@@ -276,11 +295,13 @@ SenStick.discover(
                     }
                 );
             },
+            // 5秒間待機
             function(callback)
             {
                 console.log('wait a minute');
                 setTimeout(callback, 5000);
             },
+            // 測定を停止する
             function(callback)
             {
                 console.log('stop logging');
@@ -292,6 +313,7 @@ SenStick.discover(
                     }
                 );
             },
+            // 照度センサのnotificationの受信要求を解除する
             function(callback)
             {
                 console.log('unnotifyIlluminance');
@@ -303,6 +325,8 @@ SenStick.discover(
                     }
                 );
             },
+            // 以下，照度センサのログを取得する処理を記述する
+            // 1. メタデータを読み出したいログのIDを書き込む
             function(callback)
             {
                 console.log('writeIlluminanceLogReadoutTargetID');
@@ -316,6 +340,7 @@ SenStick.discover(
                     }
                 );
             },
+            // 2. 照度センサのログメタデータを読み出す
             function(callback)
             {
                 console.log('readIlluminanceLogMetaData');
@@ -333,6 +358,7 @@ SenStick.discover(
                     }
                 );
             },
+            // 3. 照度センサのログデータのnotification受信要求を設定する
             function(callback)
             {
                 console.log('notifyIlluminanceLogData');
@@ -344,6 +370,7 @@ SenStick.discover(
                     }
                 );
             },
+            // 4. 読み出したいログのIDを書き込む
             function(callback)
             {
                 console.log('writeIlluminanceLogReadoutTargetID');
@@ -357,12 +384,14 @@ SenStick.discover(
                     }
                 );
             },
+            // 5. ログの受信が完了するまで待機する
             function(callback)
             {
                 console.log('wait for finish readout illuminance log data');
                 while(!logdata_readout_finished) {}
                 callback();
             },
+            // 6. 照度センサのログデータのnotification受信要求を解除する
             function(callback)
             {
                 console.log('unnotifyIlluminanceLogData');
@@ -374,7 +403,9 @@ SenStick.discover(
                     }
                 );
             },
-            // 接続終わり！
+            // 以上が照度センサのログデータ受信のための処理
+
+            // SenStickから切断する
             function(callback)
             {
                 console.log('disconnect');
